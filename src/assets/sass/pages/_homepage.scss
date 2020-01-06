@@ -1,0 +1,61 @@
+.homepage-wrapper {
+   display: grid;
+   grid-template-columns: 80px 50% 50%;
+   grid-template-rows: repeat(3, 1fr);
+   height: 100vh;
+   background-image: url(./../../img/home-bg.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   opacity: 1;
+
+   @include xs {
+      grid-template-columns: 1fr;
+   }
+
+   @include sm {
+      grid-template-columns: 1fr;
+   }
+
+   @include md {
+      background-position-x: 70%;
+   }
+
+   @include lg {
+      background-position-x: 70%;
+   }
+
+   @include xl {
+      background-position-x: 100%;
+   }
+
+   .hello {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      padding: 4%;
+      margin: 15px;
+      opacity: 1;
+
+      @extend %position-relative-opacity-visible;
+
+      @include xs {
+         grid-column-start: 1;
+         grid-column-end: 2;
+      }
+
+      @include sm {
+         grid-column-start: 1;
+         grid-column-end: 2;
+      }
+   }
+
+   h1 {
+      margin: 20px 0px;
+   }
+
+
+
+
+
+}

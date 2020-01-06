@@ -1,0 +1,184 @@
+// ----------------------------------------------------------------
+// basic setup
+// ----------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:400,500,700');
+
+$colors: (white: rgb(255, 255, 255),
+    dark: rgb(76, 76, 76));
+
+
+$fonts: (main-font: 'Montserrat',
+    sec-font: 'Lato'
+);
+
+$font-sizes : (h1-size: 57px,
+    h2-size: 41px,
+    h3-size: 28px,
+    h4-size: 25px,
+    h5-size: 19px,
+    h6-size: 12px,
+    p-size: 21px);
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+// ----------------------------------------------------------------
+// responsive breakpoints 
+//      xs: 0, sm: 576px, md: 768px, lg: 992px,xl: 1200px  
+// ----------------------------------------------------------------
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1440px;
+$xxxl: 1920px;
+
+
+@mixin xs {
+    @media (min-width: 0px) and (max-width: #{$sm - 1px}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (min-width: #{$sm}) and (max-width: #{$md - 1px}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: #{$md}) and (max-width: #{$lg - 1px}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: #{$lg}) and (max-width: #{$xl - 1px}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: #{$xl}) and (max-width: #{$xxl - 1px}) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (min-width: #{$xxl}) and (max-width: #{$xxxl - 1px}) {
+        @content;
+    }
+}
+
+@mixin xxxl {
+    @media (min-width: #{$xxxl}) {
+        @content;
+    }
+}
+
+
+// ----------------------------------------------------------------
+// typo
+// ----------------------------------------------------------------
+
+
+h1 {
+    font-family: map-get($fonts, main-font);
+    font-size: map-get($font-sizes, h1-size);
+    font-weight: 500;
+
+    @include xs {
+        font-size: 47px;
+    }
+
+    @include sm {
+        font-size: 47px;
+    }
+}
+
+h2 {
+    font-family: map-get($fonts, sec-font);
+    font-size: map-get($font-sizes, h2-size);
+    font-weight: 400;
+}
+
+h3 {
+    font-family: map-get($fonts, main-font);
+    font-size: map-get($font-sizes, h3-size);
+}
+
+h4 {
+    font-family: map-get($fonts, main-font);
+    font-size: map-get($font-sizes, h4-size);
+}
+
+h5 {
+    font-family: map-get($fonts, main-font);
+    font-size: map-get($font-sizes, h5-size);
+}
+
+h6 {
+    font-family: map-get($fonts, main-font);
+    font-size: map-get($font-sizes, h6-size);
+}
+
+p {
+    font-family: map-get($fonts, main-font);
+    font-size: map-get($font-sizes, p-size);
+}
+
+a {
+    font-family: map-get($fonts, main-font);
+    cursor: default;
+}
+
+ul {
+    font-family: map-get($fonts, main-font);
+}
+
+strong {
+    font-weight: 500;
+}
+
+body {
+    color: map-get($colors, white);
+    cursor: default;
+    overflow-x: hidden;
+
+    @include xs {}
+}
+
+.h-100 {
+    height: 100vh !important;
+    overflow: hidden;
+}
+
+// ----------------------------------------------------------------
+// stuff
+// ----------------------------------------------------------------
+
+.font-white {
+    color: #fff;
+}
+
+.d-none {
+    display: none !important;
+}
+
+
+// ----------------------------------------------------------------
+// mixins
+// ----------------------------------------------------------------
+
+%position-relative-opacity-visible {
+
+    position: relative;
+    opacity: 1;
+
+}

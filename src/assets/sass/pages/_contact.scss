@@ -1,0 +1,120 @@
+.contact-wrapper {
+   display: grid;
+   grid-template-columns: 80px 1fr;  
+   grid-template-rows: 1fr;
+   background-color: #202020;
+   justify-items: stretch;
+
+   @include xs {
+      grid-template-columns: 1fr;
+      justify-items: stretch; 
+      min-height: 100vh;
+   }
+
+   @include sm {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+      min-height: 100vh;
+   }
+
+  
+
+   .contact-content {
+      position: relative;
+      padding: 150px 80px 100px 80px;
+      
+      @include xs {
+         padding: 150px 40px 100px 40px;
+      }
+
+      @include sm {
+         padding: 150px 40px 100px 40px;
+      }
+
+      h1 {
+         margin: 20px 0px;
+         font-size: 19px;
+         font-weight: normal;
+         @include xs {
+            font-size: 32px;
+         }
+      }
+
+      h2 {
+         margin: 20px 0px;
+         line-height: 50px;
+         @include xs {
+            font-size: 20px;
+            line-height: 27px;
+         }
+        }
+
+      h3 {
+         line-height: 30px; 
+         margin: 30px 0px;
+         width: 80%;
+         @include xs {
+            width: 100%;
+            font-size:15px;
+            line-height: 20px;
+         }
+      }
+
+      h4 {
+         margin-top: 80px;
+         @include xs {
+            margin: 80px 0px;
+         }
+      }
+
+      
+
+      ul {
+         margin-top: 90px;
+         width: 80%;
+         @include xs {
+            width: 100%;
+            margin-top: 20px;
+         }
+         li {
+            margin: 10px 0px;
+            border-bottom: 1px solid #424242;
+            padding: 5px 0px 17px 0px;
+         }
+      }
+
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+
+      a {
+         color: #fff !important;
+         text-decoration: none;
+         display: inline-block;
+         margin-bottom: 30px;
+        
+         &:after {
+            content: "";
+            width: 60%;
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            display: block;
+            position: relative;
+            top: 10px
+         }
+         &:nth-child(2) {
+            @include xs {margin-left: 0px;}
+            @include sm {margin-left: 20px;}
+            @include md {margin-left: 20px;}
+            @include lg {margin-left: 20px;}
+            @include xl {margin-left: 20px;}
+            @include xxl {margin-left: 20px;}
+            @include xxxl {margin-left: 20px;}
+   
+           
+         }
+      }
+   }
+   
+}
