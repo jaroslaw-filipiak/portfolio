@@ -7,7 +7,7 @@ const HomeView = () => (
 		<Navigation />
 		<Sidebar />
 		<div className="hello">
-			<h5>Jarosław Filipiak v2</h5>
+			<h5>Jarosław Filipiak</h5>
 			<h1>Designer &amp; front-end developer</h1>
 			<h2>Projektuje oraz wdrażam kompletne serwisy internetowe</h2>
 		</div>
