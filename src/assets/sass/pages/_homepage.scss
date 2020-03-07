@@ -1,12 +1,9 @@
 .homepage-wrapper {
    display: grid;
-   grid-template-columns: 80px 50% 50%;
-   grid-template-rows: repeat(3, 1fr);
-   height: 100vh;
-   background-image: url(./../../img/home-bg.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
-   opacity: 1;
+   grid-template-columns: 80px 1fr;
+   grid-template-rows: 500px 1fr;
+   background-color: #202020;
+
 
    @include xs {
       grid-template-columns: 1fr;
@@ -16,46 +13,137 @@
       grid-template-columns: 1fr;
    }
 
-   @include md {
-      background-position-x: 70%;
-   }
+   .heading-content {
+      position: relative;
+      padding: 150px 80px 100px 80px;
+      width: 100%;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      box-sizing: border-box;
+      background: #242424;
 
-   @include lg {
-      background-position-x: 70%;
-   }
 
-   @include xl {
-      background-position-x: 100%;
-   }
-
-   .hello {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 2;
-      grid-row-end: 3;
-      padding: 4%;
-      margin: 15px;
-      opacity: 1;
-
-      @extend %position-relative-opacity-visible;
 
       @include xs {
-         grid-column-start: 1;
-         grid-column-end: 2;
+         width: 100%;
+      }
+
+      @include xs {
+         padding: 150px 40px 30px 40px;
       }
 
       @include sm {
-         grid-column-start: 1;
-         grid-column-end: 2;
+         padding: 150px 40px 30px 40px;
       }
+
+      h1 {
+         margin: 20px 0px;
+         font-weight: normal;
+
+         @include xs {
+            font-size: 32px;
+         }
+      }
+
+      h2 {
+         margin: 20px 0px;
+         line-height: 50px;
+
+         @include xs {
+            font-size: 20px;
+            line-height: 27px;
+         }
+      }
+
+      h3 {
+         line-height: 30px;
+         margin: 30px 0px;
+         width: 80%;
+
+         @include xs {
+            width: 100%;
+            font-size: 15px;
+            line-height: 20px;
+         }
+      }
+
+      h4 {
+         margin-top: 80px;
+         margin-bottom: 30px;
+      }
+
+      p {
+         line-height: 29px;
+         width: 66%;
+
+         @include xs {
+            width: 100%;
+         }
+      }
+
+
+
+      ul {
+         margin-top: 90px;
+         width: 80%;
+
+         @include xs {
+            width: 100%;
+            margin-top: 20px;
+         }
+
+         li {
+            margin: 10px 0px;
+            border-bottom: 1px solid #424242;
+            padding: 5px 0px 17px 0px;
+            line-height: 20px;
+         }
+
+         span.skills-heading {
+            font-weight: 500;
+
+            &:after {
+               content: '';
+               display: block;
+               width: 100px;
+               height: 2px;
+               margin-top: 6px;
+               background-color: #fff;
+            }
+
+         }
+      }
+
+      img {
+
+         max-width: 100%;
+         height: auto;
+         position: relative;
+      }
+
+
    }
 
-   h1 {
-      margin: 20px 0px;
+   .portfolio-list {
+      grid-row-start: 2;
+      grid-row-end: 3;
    }
 
+}
 
+// PORTFOLIO  ITEMS
 
+.portfolio-list {
+   display: flex;
+   flex-wrap: wrap;
+   margin: -4px;
+   position: relative;
+   top: -60px;
 
-
+   .portfolio-item {
+      margin: 4px;
+      width: 550px;
+      height: 550px;
+      background: rgb(73, 73, 73);
+   }
 }
