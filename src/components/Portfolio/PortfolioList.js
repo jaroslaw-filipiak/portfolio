@@ -9,15 +9,18 @@ export default class PortfolioList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost/2020/jfilipiak/wp-json/wp/v2/portfolio')
+      .get('http://localhost/2020/jfilipiak/wp-json/wp/v2/portfolio?embded')
       .then(response => {
-        this.setState({ items: response.data });
+        this.setState({
+          items: response.data
+        });
       });
   }
+
   render() {
     const posts = this.state.items.map(item => {
-      return <PortfolioItem title={item.title.rendered} />;
+      return <PortfolioItem key={item.id} item={item} />;
     });
-    return <>{posts}</>;
+    return <> {posts} </>;
   }
 }

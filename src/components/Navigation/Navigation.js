@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Navigation extends Component {
   constructor(props) {
@@ -23,13 +23,13 @@ class Navigation extends Component {
     return (
       <>
         <div className={this.state.isVisible ? 'menu' : 'menu d-none'}>
-          <Link to="/about-me" className="menu-left">
+          <NavLink to="/about-me" className="menu-left">
             O mnie
-          </Link>
+          </NavLink>
 
-          <Link to="/contact" className="menu-right">
+          <NavLink to="/contact" className="menu-right">
             Kontakt
-          </Link>
+          </NavLink>
         </div>
 
         <button
