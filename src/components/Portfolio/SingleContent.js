@@ -13,7 +13,7 @@ const SingleContent = props => {
           style={{ backgroundColor: `${props.item.acf.behance_link_kolor}` }}
           href={props.item.acf.behance_link}
         >
-          Zobacz w serwisie behance
+          Zobacz w serwisie behanc1
         </a>
       </div>
       <div className="single-content">
