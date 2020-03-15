@@ -2,18 +2,19 @@ import React from 'react';
 
 const SingleContent = props => {
   console.log(props);
-  const style = {
-    backgroundImage: `url(${props.item.acf.header_image})`
-  };
+  // const style = {
+  //   backgroundImage: `url(${props.item.acf.header_image})`
+  // };
   return (
     <div className="single">
-      <div className="single-header" style={style}>
+      <div className="single-header">
+        <img src={props.item.acf.header_image} alt="" />
         <a
           className="behance-btn"
           style={{ backgroundColor: `${props.item.acf.behance_link_kolor}` }}
           href={props.item.acf.behance_link}
         >
-          Zobacz w serwisie behanc1
+          Zobacz w serwisie behance
         </a>
       </div>
       <div className="single-content">

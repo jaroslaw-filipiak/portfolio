@@ -1,7 +1,16 @@
 import React from 'react';
+import Navigation from '../../components/Navigation/Navigation';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import BlogList from '../../components/Blog/BlogList';
 
-const BlogView = () => {
-	return <h1>Blog View</h1>;
-};
+const HomeView = () => (
+  <div className="wrapper blog-wrapper">
+    <Navigation />
+    <Sidebar />
+    <div className="blog-list">
+      <BlogList />
+    </div>
+  </div>
+);
 
-export default BlogView;
+export default HomeView;
