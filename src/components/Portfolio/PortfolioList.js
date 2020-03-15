@@ -9,7 +9,7 @@ export default class PortfolioList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://j-filipiak.pl/api/wp-json/wp/v2/portfolio?embded')
+      .get('https://www.j-filipiak.pl/api/wp-json/wp/v2/portfolio?embded')
       .then(response => {
         this.setState({
           items: response.data

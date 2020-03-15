@@ -11,7 +11,7 @@ export default class Single extends Component {
     console.log(this.props.slug);
     axios
       .get(
-        `http://j-filipiak.pl/api/wp-json/wp/v2/portfolio?slug=${this.props.slug}}`
+        `https://www.j-filipiak.pl/api/wp-json/wp/v2/portfolio?slug=${this.props.slug}}`
       )
       .then(response => {
         this.setState({
