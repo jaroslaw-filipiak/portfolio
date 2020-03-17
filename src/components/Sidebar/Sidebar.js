@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { FacebookProvider, MessageUs, CustomChat } from 'react-facebook';
-// import MessengerIcon from './../../assets/img/svg/messenger.svg';
+import { FacebookProvider, MessageUs, CustomChat } from 'react-facebook';
+import MessengerIcon from './../../assets/img/svg/messenger.svg';
 
 const Sidebar = props => (
   <>
@@ -11,17 +11,17 @@ const Sidebar = props => (
           <Link to="/">JF</Link>
         </div>
         <div className="nav-center">
-          {/* <img src={MessengerIcon} alt="Messenger" /> */}
-          {/* <FacebookProvider appId="1403859393129851">
+          <img src={MessengerIcon} alt="Messenger" />
+          { <FacebookProvider appId="1403859393129851">
 						<MessageUs
 							messengerAppId="105438984152978"
 							pageId="105438984152978"
 						/>
-					</FacebookProvider> */}
+					</FacebookProvider> }
 
-          {/* <FacebookProvider appId="1403859393129851" chatSupport>
+           <FacebookProvider appId="1403859393129851" chatSupport>
 						<CustomChat pageId="105438984152978" minimized={false} />
-					</FacebookProvider> */}
+					</FacebookProvider>
         </div>
         <div className="nav-bottom">
           <a href="mailto:info@j-filipiak.pl">info@j-filipiak.pl</a>

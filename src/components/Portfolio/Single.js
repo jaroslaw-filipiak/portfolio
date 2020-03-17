@@ -1,29 +1,38 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import SingleContent from './SingleContent';
+import {connect} from 'react-redux'
 
-export default class Single extends Component {
-  state = {
-    items: []
-  };
-
-  componentDidMount() {
-    console.log(this.props.slug);
-    axios
-      .get(
-        `https://www.j-filipiak.pl/api/wp-json/wp/v2/portfolio?slug=${this.props.slug}}`
-      )
-      .then(response => {
-        this.setState({
-          items: response.data
-        });
-      });
-  }
-
+class Single extends Component {
+ 
   render() {
-    const item = this.state.items.map(item => {
-      return <SingleContent key={item.id} item={item} />;
-    });
-    return <> {item} </>;
+    console.log(this.props)
+    return (
+      <div className="single">
+      <div className="single-header">
+        <img src={this.props.item.acf.header_image} alt="" />
+        <a
+          className="behance-btn"
+          style={{ backgroundColor: `${this.props.item.acf.behance_link_kolor}` }}
+          href={this.props.item.acf.behance_link}
+        >
+          Zobacz w serwisie behance
+        </a>
+      </div>
+      <div className="single-content">
+        <h1>{this.props.item.title.rendered}</h1>
+        <div
+          dangerouslySetInnerHTML={{ __html: this.props.item.content.rendered }}
+        ></div>
+      </div>
+    </div>
+    )
   }
 }
+
+const mapStateToProps = (state , ownProps) => {
+let id = ownProps.id;
+return {
+  item: state.items.find(item => item.id == id)
+}
+}
+
+export default connect(mapStateToProps)(Single)

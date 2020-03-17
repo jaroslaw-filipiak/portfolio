@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import PortfolioItem from './PortfolioItem';
 
-export default class PortfolioList extends Component {
-  state = {
-    items: []
-  };
+import { connect } from 'react-redux';
 
-  componentDidMount() {
-    axios
-      .get('https://www.j-filipiak.pl/api/wp-json/wp/v2/portfolio?embded')
-      .then(response => {
-        this.setState({
-          items: response.data
-        });
-      });
-  }
-
+class PortfolioList extends Component {
   render() {
-    const posts = this.state.items.map(item => {
+    console.log(this.props);
+    const posts = this.props.items.map(item => {
       return <PortfolioItem key={item.id} item={item} />;
     });
     return <> {posts} </>;
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+
+export default connect(mapStateToProps)(PortfolioList);
