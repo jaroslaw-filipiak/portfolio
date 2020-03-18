@@ -27,8 +27,12 @@ class Navigation extends Component {
             O mnie
           </NavLink>
 
-          <NavLink to="/contact" className="menu-right">
+          <NavLink to="/contact" className="menu-center">
             Kontakt
+          </NavLink>
+
+          <NavLink to="/blog" className="menu-right">
+            Blog
           </NavLink>
         </div>
 
