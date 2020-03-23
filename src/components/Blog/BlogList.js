@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import BlogItem from './BlogItem';
+import axios from 'axios';
 
-class BlogList extends Component {
+export default class BlogList extends Component {
+  state = {
+    posts: []
+  };
+
+  async componentDidMount() {
+    const postsRes = await axios({
+      method: 'GET',
+      url: 'https://www.j-filipiak.pl/api/wp-json/wp/v2/posts'
+    });
+
+    // const fetchedPosts = postsRes.data;
+
+    this.setState({
+      posts: postsRes.data
+    });
+  }
+
   render() {
-    console.log(this.props.posts);
-    const blogItems = this.props.posts.map(item => {
+    const blogItems = this.state.posts.map(item => {
       return <BlogItem key={item.id} item={item} />;
     });
     return <>{blogItems}</>;
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    posts: state.posts
-  };
-};
-
-export default connect(mapStateToProps)(BlogList);

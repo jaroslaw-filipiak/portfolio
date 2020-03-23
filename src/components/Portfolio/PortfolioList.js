@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 
 class PortfolioList extends Component {
   render() {
-    console.log(this.props);
+    // console.log('==========');
+    console.log(this.props.items);
+    // console.log('==========');
     const posts = this.props.items.map(item => {
       return <PortfolioItem key={item.id} item={item} />;
     });
