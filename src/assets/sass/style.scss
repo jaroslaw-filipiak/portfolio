@@ -17,4 +17,20 @@
 @import 'other/hamburger';
 @import 'other/scrollbar';
 
-@import 'single'
+@import 'single';
+
+.portfolio-filters {
+    width: 100vw;
+    padding-bottom: 40px;
+    text-align: center;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            padding: 0px 10px;
+        }
+    }
+}

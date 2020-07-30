@@ -6,7 +6,11 @@ const SingleContent = (props) => {
 	//   backgroundImage: `url(${props.item.acf.header_image})`
 	// };
 	return (
-		<div className="single">
+		<div
+			className={`single ${props.item.acf.kategoria.map(
+				(item) => item.slug + ' -'
+			)}`}
+		>
 			<div className="single-header">
 				<img src={props.item.acf.header_image} alt="" />
 				<a

@@ -21,9 +21,7 @@ export default class PortfolioList extends Component {
 
 	render() {
 		const posts = this.state.items.map((item) => {
-			return (
-				<PortfolioItem key={item.id} item={item} category={item.categories} />
-			);
+			return <PortfolioItem key={item.id} item={item} />;
 		});
 
 		return this.state.isLoading ? posts : 'czekaj...';
