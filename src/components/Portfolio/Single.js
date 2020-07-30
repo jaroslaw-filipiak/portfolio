@@ -24,7 +24,9 @@ export default class Single extends Component {
 
 	render() {
 		const item = this.state.items.map((item) => {
-			return <SingleContent key={item.id} item={item} />;
+			return (
+				<SingleContent key={item.id} item={item} category={item.categories} />
+			);
 		});
 		return this.state.isLoading ? item : 'czekaj...';
 	}
