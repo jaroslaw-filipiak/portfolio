@@ -12,10 +12,10 @@ export default class PortfolioList extends Component {
 		axios
 			.get('https://www.j-filipiak.pl/api/wp-json/wp/v2/portfolio?embded')
 			.then((response) => {
-				this.setState({
+				this.setState((prevstate) => ({
 					items: response.data,
 					isLoading: true,
-				});
+				}));
 			});
 	}
 
@@ -24,6 +24,6 @@ export default class PortfolioList extends Component {
 			return <PortfolioItem key={item.id} item={item} />;
 		});
 
-		return this.state.isLoading ? posts : 'czekaj...';
+		return this.state.isLoading ? <>{posts}</> : 'czekaj...';
 	}
 }

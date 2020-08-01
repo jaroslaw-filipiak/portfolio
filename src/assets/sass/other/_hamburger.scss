@@ -1,5 +1,5 @@
  .hamburger {
-   padding: 15px 15px;
+   //  padding: 15px 15px;
    display: inline-block;
    cursor: pointer;
    transition-property: opacity, filter;
@@ -11,11 +11,19 @@
    background-color: transparent;
    border: 0;
    margin: 0;
-   position: absolute;
-   right: 0px;
+   //  position: absolute;
+   //  right: 0px;
    top: 10px;
    z-index: 100;
    overflow: visible;
+   right: 10px;
+ }
+
+ .hamburger {
+   padding: 20px;
+   position: fixed;
+   //  background: #ffc83d;
+   right: 10px;
  }
 
  .hamburger:hover {
@@ -30,6 +38,7 @@
  .hamburger.is-active .hamburger-inner::before,
  .hamburger.is-active .hamburger-inner::after {
    background-color: rgb(255, 255, 255);
+
  }
 
  .hamburger-box {

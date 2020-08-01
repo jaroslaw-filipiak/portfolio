@@ -4,9 +4,9 @@ function PortfolioFilters() {
 	return (
 		<div className="portfolio-filters">
 			<ul>
-				<li>Strony www</li>
-				<li>Projektowanie graficzne</li>
-				<li>Aplikacje mobilne</li>
+				<li data-category="strony-www">Strony www</li>
+				<li data-category="projektowanie-graficzne">Projektowanie graficzne</li>
+				<li data-category="aplikacje-mobilne">Aplikacje mobilne</li>
 			</ul>
 		</div>
 	);
